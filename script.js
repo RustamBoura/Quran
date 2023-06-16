@@ -20,9 +20,13 @@ chaptersbutton.addEventListener('click', async() => {
     console.log(chapters)
     if (chapters) {
         chapters.forEach((chapter) =>{
-          results.innerHTML += `<div class="card"> 
+          results.innerHTML += `<div class="results"> 
          <h2> ${chapter.number} </h2>
           <h1> ${chapter.name} </h1>
+          <h3> ${chapter.englishName} </h3>
+          <h3> ${chapter.englishNameTranslation} </h3>
+          <h3> ${chapter.numberOfAyahs} </h3>
+          <h3> ${chapter.revelationType} </h3>
           </div>`})
         }
     }
@@ -31,24 +35,71 @@ chaptersbutton.addEventListener('click', async() => {
     }
 })
 
+// bookmarksbutton.addEventListener('click', async () => {
+//     try {
+//       results2.innerHTML = '';
+//       let min = 1;
+//       let max = 114;
+//       let randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+//       console.log(randomNum);
+//       const apiUrl = `http://api.alquran.cloud/v1/quran/en.asad`;
+//       const res = await axios.get(apiUrl);
+//       console.log(res.data);
+//       let bookmarks = res.data.data;
+//       console.log(bookmarks);
+//       if (bookmarks) {
+//         bookmarks.surahs.forEach((surah) => {
+//           surah.ayahs.forEach((ayah) => {
+//             results2.innerHTML += `<div class="card">
+//               <p>${ayah.text}</p>
+//             </div>`;
+//           });
+//         });
+//       }
+//     } catch (error) {
+//       console.error('Error fetching chapters:', error);
+//     }
+//   });
+  
+  
 bookmarksbutton.addEventListener('click', async() => {
-    try {
-    const apiUrl = `http://api.alquran.cloud/v1/quran/en.asad`;
-    const res = await axios.get(`${apiUrl}`)
-    console.log(res.data)
-    let bookmarks = res.data.data
-    console.log(bookmarks)
+    // try {
+    // let min = 1
+    // let max = 114
+    // let randomNum = Math.floor(Math.random()*(max-min+1))+min
+    // console.log(randomNum)
+    // const apiUrl = `http://api.alquran.cloud/v1/quran/en.asad`;
+    // const res = await axios.get(`${apiUrl}`)
+    // console.log(res.data)
+    // let bookmarks = res.data.data
+    // console.log(bookmarks)
+    // // if (bookmarks) {
+    // //     bookmarks.forEach((bookmark) =>{
+    // //       results2.innerHTML += `<div class="card"> 
+    // //      <h1> ${bookmark.name} </h1>
+    // //       </div>`})
+    // //     }
     // if (bookmarks) {
-    //     bookmarks.forEach((bookmark) =>{
-    //       results2.innerHTML += `<div class="card"> 
-    //      <h1> ${bookmark.name} </h1>
-    //       </div>`})
-    //     }
-    if (bookmarks) {
-        results2.innerHTML += `<div class="card"> 
-       <h1> ${bookmarks.ayahs} </h1>
-        </div>`
-      }
+    //     results2.innerHTML += `<div class="card"> 
+    //    <h1> ${bookmarks.surahs} </h1>
+    //     </div>`
+    //   }
+    try {
+        results2.innerHTML = ''
+        let min = 1
+        let max = 114
+        let randomNum = Math.floor(Math.random()*(max-min+1))+min
+        console.log(randomNum)
+        const apiUrl = `http://api.alquran.cloud/v1/quran/en.asad`;
+        const res = await axios.get(`${apiUrl}`)
+        console.log(res.data)
+        let bookmarks = res.data.data
+        console.log(bookmarks)
+        if (bookmarks) {
+              results2.innerHTML += `<div class="card"> 
+             <h1> ${bookmarks.surahs.ayahs} </h1>
+              </div>`
+            }
     }
      catch (error) {
         console.error('Error fetching chapters:', error)
@@ -90,7 +141,7 @@ randomsbutton.addEventListener('click', async() => {
     if (randoms) {
           results4.innerHTML += `<div class="card"> 
          <h1> ${randoms.text} </h1>
-         <h1> ${randoms.juz} </h1>
+         <h2> ${randoms.surah.englishName}: ${randoms.surah.number}</h2>
           </div>`
         }
     }

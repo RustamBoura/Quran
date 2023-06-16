@@ -54,11 +54,26 @@ nav {
 .results {
     text-align: right;
     background-color: whitesmoke;
+    box-shadow: 0px 2px 4px green;
+    color: black;
+    -webkit-text-stroke: .5px gold;
+    text-shadow: 1px 1px 2px gold;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-left: 10 px;
+
+
 }
 .results4 {
-    background-color: rgb(43, 26, 4);
-    margin: auto;
-    width:fit-content;
-    height:auto
+    text-align: right;
+    background-color: whitesmoke;
+    box-shadow: 2px 4px 8px green;
+    color: black;
+    -webkit-text-stroke: .5px gold;
+    text-shadow: 1px 1px 2px gold;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-left: 10 px;
+
 
 }
