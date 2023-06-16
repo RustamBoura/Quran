@@ -6,12 +6,13 @@
 
 header {
     text-align: center;
-    border: solid black .2cm;
+    box-shadow: green;
+    background-color: black;
 }
 
 h1 {
     color: black;
-    font-size: 300%;
+    font-size: 400%;
     -webkit-text-stroke: 1px gold;
     text-shadow: 1px 1px 2px gold;
 
@@ -19,14 +20,14 @@ h1 {
 
 h2 {
     color: black;
-    font-size: xx-large;
+    font-size: 300%;
     text-align: center;
     -webkit-text-stroke: .5px gold;
     text-shadow: 1px 1px 2px gold;
 }
 
 body {
-    background-color: green
+    background-color: black
 }
 
 button {
@@ -52,7 +53,7 @@ nav {
 
 .results {
     text-align: right;
-    background-color: rgb(43, 26, 4);
+    background-color: whitesmoke;
 }
 .results4 {
     background-color: rgb(43, 26, 4);
