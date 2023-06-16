@@ -33,6 +33,14 @@ const getRandom = async (req, res) => {
     return res.status(500).send(error.message);
 }
 }
+const getLocation = async (req, res) => {
+    try {
+    const location = await Quran.find()
+    return res.status(200).json({ location })
+} catch (error) {
+    return res.status(500).send(error.message);
+}
+}
 
 
 module.exports = {
@@ -40,5 +48,6 @@ module.exports = {
     getBookmark,
     getSaved,
     getRandom,
+    getLocation
 
 }

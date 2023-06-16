@@ -3,6 +3,7 @@ const cors = require ('cors')
 const db = require('./db')
 const PORT = process.env.PORT || 3001
 const AppRouter = require('./Router/AppRouter.js')
+const bodyParser = require('body-parser');
 const app = express()
 
 app.use(cors())
@@ -18,3 +19,6 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api', AppRouter)
+
+
+app.use(bodyParser.json())
